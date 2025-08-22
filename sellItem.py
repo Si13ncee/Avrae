@@ -30,7 +30,6 @@ if not bagsLoaded.error:
         display += f"{'' if idx == 0 else ',' if (positive and quantity>0) or (not positive and quantity<0) else ', and removes'} {baglib.round_nicely(abs(quantity))} {coin}"
         if positive and quantity<0:
             positive = False
-        
 bag_name = "Coin Purse" if bagsLoaded.use_coin_purse() else baglib.coinPouchName
 if delta:
     display = f" to their {bag_name}" if positive else f" from their {bag_name}"
@@ -69,3 +68,4 @@ return f"""-title "{title}" -desc "{text}" {display} -color #5197ed """
 </drac2>
 -footer ＂{{get('coinFooter') or get_svar('coinFooter', f"View '{ctx.prefix}help {ctx.alias}' for more help")}}＂
 -thumb ＂https://imgur.com/CxFqWoH.png＂
+
