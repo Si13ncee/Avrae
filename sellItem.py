@@ -74,7 +74,7 @@ else:
 
 title = [f"{name} tries to add to their {bag_name} but can't find it.", title, f"{name} can't afford that much."][success]
 
-return f"""-title ＂{title}＂-desc "{text}" {display} -color #5197ed """
+return f"""-title "{title}" -desc "{text}" {display} -color #5197ed """
 </drac2>
 -footer ＂{{get('coinFooter') or get_svar('coinFooter', f"View '{ctx.prefix}help {ctx.alias}' for more help")}}＂
 -thumb ＂https://imgur.com/CxFqWoH.png＂
