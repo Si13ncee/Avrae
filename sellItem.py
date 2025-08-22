@@ -1,6 +1,5 @@
 embed <drac2>
 using(baglib="5f1ffcbf-3f59-4396-b402-1ca0f02d6bbb")
-    
 args = &ARGS&
 ch = character()
 bagsLoaded = baglib.LoadedBags()
@@ -25,8 +24,6 @@ if delta:
         if delta[0][1]>0:
             display = f"Selling Listing:\n...Loading...\nItem:{item}{name} is selling a... {item}"
             positive = True
-
-
 if not bagsLoaded.error:
     for idx, cointup in enumerate(delta):
         coin, quantity = cointup
@@ -35,20 +32,16 @@ if not bagsLoaded.error:
             positive = False
         
 bag_name = "Coin Purse" if bagsLoaded.use_coin_purse() else baglib.coinPouchName
-
 if delta:
     display = f" to their {bag_name}" if positive else f" from their {bag_name}"
 else:
     display = f" their {bag_name}"
-    
 if not focus:
     bagsLoaded.get_coins()
-
 if bagsLoaded.internal_bag_data:
     success = bagsLoaded.save_bags()
 else:
     success = -1 if bagsLoaded.error else 1
-    
 if coin_error:
     text = ""
     display = '-f ＂`&*&` contained invalid coins＂'
@@ -71,9 +64,7 @@ elif openMode != 'none':
 else:
     text = ""
     display = ""
-
 title = [f"{name} tries to add to their {bag_name} but can't find it.", title, f"{name} can't afford that much."][success]
-
 return f"""-title "{title}" -desc "{text}" {display} -color #5197ed """
 </drac2>
 -footer ＂{{get('coinFooter') or get_svar('coinFooter', f"View '{ctx.prefix}help {ctx.alias}' for more help")}}＂
