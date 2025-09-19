@@ -68,4 +68,3 @@ return f"""-title "{title}" -desc "{text}" {display} -color #5197ed """
 </drac2>
 -footer ＂{{get('coinFooter') or get_svar('coinFooter', f"View '{ctx.prefix}help {ctx.alias}' for more help")}}＂
 -thumb ＂https://imgur.com/CxFqWoH.png＂
-
